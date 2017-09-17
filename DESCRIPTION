@@ -1,0 +1,17 @@
+Package: rnmethods
+Type: Package
+Title: Numerical Methods for stochastic processes
+Version: 0.1.0
+Author: Fernando Teixeira
+Maintainer: Fernando <fernando.ormonde@gmail.com>
+Description: A package to compute numerically European calls using the Heston model.
+License: GPL
+LazyData: TRUE
+Imports:
+    Rcpp (>= 0.12.5),
+    gaussquad,
+    pracma,
+    Bessel
+LinkingTo:
+    Rcpp
+RoxygenNote: 6.0.1
