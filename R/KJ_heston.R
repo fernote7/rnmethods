@@ -22,6 +22,7 @@ Hestoncallkj <- function(S, X, r, q, v, theta, rho, k, sigma, t = 0, dt = NULL, 
                        sigma * sqrt(pmax(v[vt <= 0],0)) * Zv[vt <= 0] * sqrt(dt)
         v <- vt
         v[v<=0] <- 0
+        vt[vt<=0] <- 0
         S <- S + (r - (v+vt)/4) * dt + rho * sqrt(v) * Zv * sqrt(dt) +
              (1/2) * (sqrt(v) + sqrt(vt)) * (Zs + rho * Zv) * sqrt(dt) +
              ((rho * sigma * dt)/2) * ((Zv)^2 - 1)
