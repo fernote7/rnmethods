@@ -33,7 +33,7 @@ intv <- function(n, cf, v_t){
 
     ## integrate to "cdf"
     F_x <- function (x) {
-        y <- 0.5 - 1/pi * integrate(integrand(x),  lower= 0, upper= 1000,
+        y <- 0.5 - 1/pi * stats::integrate(integrand(x),  lower= 0, upper= 1000,
                                     rel.tol = 0.001, stop.on.error = FALSE)$value
         return(y)
     }
@@ -57,7 +57,8 @@ intv <- function(n, cf, v_t){
             spdf.lower <- endsign(subcdf, -1)
         if (spdf.upper == Inf)
             spdf.upper <- endsign(subcdf)
-        return(uniroot(subcdf, lower=spdf.lower, upper=spdf.upper, tol = 0.001220703)$root)
+        return(stats::uniroot(subcdf, lower=spdf.lower, upper=spdf.upper,
+                              tol = 0.001220703)$root)
     }
     U <- stats::runif(n)
     sapply(U, invcdf)
@@ -87,7 +88,7 @@ hestonea_mod <- function(S, X, r, v, theta, rho, k, sigma, t = 0, tau = 1){
     if( int_v >= 0){
         m <- log(S) + (r * (tau - t) - (1/2) * int_v + rho * int_vdw)
         std <- sqrt((1 - rho^2)) * sqrt(int_v)
-        S <- exp(m + std * rnorm(1))
+        S <- exp(m + std * stats::rnorm(1))
         v <- vt
         ST <- S
     } else {
