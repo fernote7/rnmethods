@@ -1,3 +1,23 @@
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param a PARAM_DESCRIPTION
+#' @param v0 PARAM_DESCRIPTION
+#' @param v_t PARAM_DESCRIPTION
+#' @param d PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso
+#'  \code{\link[Bessel]{BesselI}}
+#' @rdname phi_heston
+#' @export
+#' @importFrom Bessel BesselI
+
 phi_heston <- function(a, v0, v_t, d){
 
     gamma_a <- sqrt(k^2 - 2 * sigma^2 * 1i*a)
@@ -21,6 +41,24 @@ phi_heston <- function(a, v0, v_t, d){
 }
 
 
+
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param n PARAM_DESCRIPTION
+#' @param cf PARAM_DESCRIPTION
+#' @param v_t PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso
+#'  \code{\link[stats]{integrate}},\code{\link[stats]{uniroot}},\code{\link[stats]{runif}}
+#' @rdname intv
+#' @importFrom stats integrate uniroot runif
 
 intv <- function(n, cf, v_t){
     integrand <- function(x, phi = cf){
@@ -64,7 +102,35 @@ intv <- function(n, cf, v_t){
     sapply(U, invcdf)
 }
 
-hestonea_mod <- function(S, X, r, v, theta, rho, k, sigma, t = 0, tau = 1){
+
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param S PARAM_DESCRIPTION
+#' @param X PARAM_DESCRIPTION
+#' @param r PARAM_DESCRIPTION
+#' @param v PARAM_DESCRIPTION
+#' @param theta PARAM_DESCRIPTION
+#' @param rho PARAM_DESCRIPTION
+#' @param k PARAM_DESCRIPTION
+#' @param sigma PARAM_DESCRIPTION
+#' @param t PARAM_DESCRIPTION, Default: 0
+#' @param tau PARAM_DESCRIPTION, Default: 1
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso
+#'  \code{\link[stats]{rchisq}},\code{\link[stats]{rnorm}}
+#' @rdname hestonea
+#' @export
+#' @importFrom stats rchisq rnorm
+
+
+hestonea <- function(S, X, r, v, theta, rho, k, sigma, t = 0, tau = 1){
 
     d1 <- (4 * k * theta)/(sigma)^2
     c0 <- (sigma^2 * (1 - exp(-k*tau)))/(4*k)

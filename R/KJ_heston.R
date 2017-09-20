@@ -1,4 +1,34 @@
-Hestoncallkj <- function(S, X, r, q, v, theta, rho, k, sigma, t = 0, dt = NULL, tau = 1, N){
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param S PARAM_DESCRIPTION
+#' @param X PARAM_DESCRIPTION
+#' @param r PARAM_DESCRIPTION
+#' @param q PARAM_DESCRIPTION
+#' @param v PARAM_DESCRIPTION
+#' @param theta PARAM_DESCRIPTION
+#' @param rho PARAM_DESCRIPTION
+#' @param k PARAM_DESCRIPTION
+#' @param sigma PARAM_DESCRIPTION
+#' @param t PARAM_DESCRIPTION, Default: 0
+#' @param dt PARAM_DESCRIPTION, Default: NULL
+#' @param tau PARAM_DESCRIPTION, Default: 1
+#' @param N PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso
+#'  \code{\link[stats]{rnorm}}
+#' @rdname hestoncallkj
+#' @export
+#' @importFrom stats rnorm
+
+
+hestoncallkj <- function(S, X, r, q, v, theta, rho, k, sigma, t = 0, dt = NULL, tau = 1, N){
 
     cont = 1
     set.seed(103)
