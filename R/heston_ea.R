@@ -1,19 +1,18 @@
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param S PARAM_DESCRIPTION
-#' @param X PARAM_DESCRIPTION
-#' @param r PARAM_DESCRIPTION
-#' @param v PARAM_DESCRIPTION
-#' @param theta PARAM_DESCRIPTION
-#' @param rho PARAM_DESCRIPTION
-#' @param k PARAM_DESCRIPTION
-#' @param sigma PARAM_DESCRIPTION
-#' @param t PARAM_DESCRIPTION, Default: 0
-#' @param dt PARAM_DESCRIPTION, Default: NULL
-#' @param tau PARAM_DESCRIPTION, Default: 1
-#' @param N PARAM_DESCRIPTION
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @title Drift Interpolated Heston European Call
+#' @description Simulate a drift interpolated exact algorithm Heston European call
+#' @param S Spot price
+#' @param X Strike price
+#' @param r Asset's rate of return
+#' @param v Instantaneous variance
+#' @param theta Long variance
+#' @param rho Processes' correlation
+#' @param k Rate at which v returns to theta
+#' @param sigma Vol of vol
+#' @param t Starting time, Default: 0
+#' @param dt Stepsize, Default: NULL
+#' @param tau Ending time, Default: 1
+#' @param N Number of simulations
+#' @return List with call price, values used to compute the call and all simulated paths.
 #' @examples
 #' \dontrun{
 #' if(interactive()){

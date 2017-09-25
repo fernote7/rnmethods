@@ -7,34 +7,31 @@
 hestonea(S, X, r, v, theta, rho, k, sigma, t = 0, tau = 1)
 }
 \arguments{
-\item{S}{PARAM_DESCRIPTION}
+\item{S}{Spot price}
 
-\item{X}{PARAM_DESCRIPTION}
+\item{X}{Strike price}
 
-\item{r}{PARAM_DESCRIPTION}
+\item{r}{Asset's rate of return}
 
-\item{v}{PARAM_DESCRIPTION}
+\item{v}{Instantaneous variance}
 
-\item{theta}{PARAM_DESCRIPTION}
+\item{theta}{Long variance}
 
-\item{rho}{PARAM_DESCRIPTION}
+\item{rho}{Processes' correlation}
 
-\item{k}{PARAM_DESCRIPTION}
+\item{k}{Rate at which v returns to theta}
 
-\item{sigma}{PARAM_DESCRIPTION}
+\item{sigma}{Vol of vol}
 
-\item{t}{PARAM_DESCRIPTION, Default: 0}
+\item{t}{Starting time, Default: 0}
 
-\item{tau}{PARAM_DESCRIPTION, Default: 1}
+\item{tau}{Ending time, Default: 1}
 }
 \value{
-OUTPUT_DESCRIPTION
+List with call price, values used to compute the call and all simulated paths.
 }
 \description{
 FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
 }
 \examples{
 \dontrun{

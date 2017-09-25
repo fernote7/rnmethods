@@ -2,6 +2,7 @@
 
 export(euler_call)
 export(euler_call2)
+export(hestoncallkj)
 export(hestonea)
 export(hestonea_di)
 export(milstein_call)

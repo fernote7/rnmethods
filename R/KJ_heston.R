@@ -1,20 +1,18 @@
 #' @title FUNCTION_TITLE
 #' @description FUNCTION_DESCRIPTION
-#' @param S PARAM_DESCRIPTION
-#' @param X PARAM_DESCRIPTION
-#' @param r PARAM_DESCRIPTION
-#' @param q PARAM_DESCRIPTION
-#' @param v PARAM_DESCRIPTION
-#' @param theta PARAM_DESCRIPTION
-#' @param rho PARAM_DESCRIPTION
-#' @param k PARAM_DESCRIPTION
-#' @param sigma PARAM_DESCRIPTION
-#' @param t PARAM_DESCRIPTION, Default: 0
-#' @param dt PARAM_DESCRIPTION, Default: NULL
-#' @param tau PARAM_DESCRIPTION, Default: 1
-#' @param N PARAM_DESCRIPTION
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @param S Spot price
+#' @param X Strike price
+#' @param r Asset's rate of return
+#' @param v Instantaneous variance
+#' @param theta Long variance
+#' @param rho Processes' correlation
+#' @param k Rate at which v returns to theta
+#' @param sigma Vol of vol
+#' @param t Starting time, Default: 0
+#' @param dt Stepsize, Default: NULL
+#' @param tau Ending time, Default: 1
+#' @param N Number of simulations
+#' @return List with call price, values used to compute the call and all simulated paths.
 #' @examples
 #' \dontrun{
 #' if(interactive()){
@@ -28,7 +26,7 @@
 #' @importFrom stats rnorm
 
 
-hestoncallkj <- function(S, X, r, q, v, theta, rho, k, sigma, t = 0, dt = NULL, tau = 1, N){
+hestoncallkj <- function(S, X, r, v, theta, rho, k, sigma, t = 0, dt = NULL, tau = 1, N){
 
     cont = 1
     set.seed(103)
@@ -48,8 +46,8 @@ hestoncallkj <- function(S, X, r, q, v, theta, rho, k, sigma, t = 0, dt = NULL, 
 
         vt <- (v + k * theta * dt + sigma * sqrt(v) * Zv * sqrt(dt) +
                   (1/4) * sigma^2 * dt * ((Zv)^2 - 1))/(1 + k * dt)
-        vt[vt <= 0] <- v[vt <= 0] + k * dt * (theta[vt <= 0] - pmax(v[vt <= 0],0)) +
-                       sigma * sqrt(pmax(v[vt <= 0],0)) * Zv[vt <= 0] * sqrt(dt)
+        vt[vt <= 0] <- v[vt <= 0] + k * dt * (theta[vt <= 0] - v[vt <= 0]) +
+                       sigma * sqrt(v[vt <= 0]) * Zv[vt <= 0] * sqrt(dt)
         v <- vt
         v[v<=0] <- 0
         vt[vt<=0] <- 0
