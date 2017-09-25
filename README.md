@@ -4,4 +4,4 @@
 
 # rnmethods
 
-This package was created by Fernando Teixeira. It contains numerical simulation methods for SDEs and Eropean Call Options simulations using different Heston implementations.
+This package was created as a tool to my applied mathematics thesis. It contains numerical simulation methods for SDEs and European Call Options simulations using different Heston implementations.
