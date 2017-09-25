@@ -15,7 +15,6 @@
 #' @seealso
 #'  \code{\link[Bessel]{BesselI}}
 #' @rdname phi_heston
-#' @export
 #' @importFrom Bessel BesselI
 
 
