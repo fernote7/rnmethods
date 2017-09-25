@@ -2,11 +2,6 @@
 
 
 
-# ecoseries
-functions to capture BACEN, SIDRA and IPEA series using their APIs
-
-
-
 # rnmethods
 
-This package was created by Fernando Teixeira. It contains numerical simulation methods for SDEs and Call Option problems.
+This package was created by Fernando Teixeira. It contains numerical simulation methods for SDEs and Eropean Call Options simulations using different Heston implementations.
