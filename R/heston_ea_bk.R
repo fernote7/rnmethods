@@ -18,6 +18,7 @@
 #' @export
 #' @importFrom Bessel BesselI
 
+
 phi_heston <- function(a, v0, v_t, d){
 
     gamma_a <- sqrt(k^2 - 2 * sigma^2 * 1i*a)
